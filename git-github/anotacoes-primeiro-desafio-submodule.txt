@@ -2,3 +2,5 @@ Infelizmente não consegui remover o livro-receitas que acabou
 indo como um submodule. Eu não sei o que é isso dentro do
 Git e não achei uma solução na internet para removê-lo.
 Terei que pesquisar mais.
+
+Atualização: dei git rm livro-recitas e deu certo, sumiu.
