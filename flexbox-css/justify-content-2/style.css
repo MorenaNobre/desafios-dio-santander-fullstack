@@ -17,8 +17,9 @@
   color: white;
 }
 
-.flex-start {
-  justify-content: flex-start;
+.column {
+  flex-direction: column;
+  min-height: 350px;
 }
 
 .flex-end {
