@@ -34,6 +34,7 @@ header .list-items {
   max-width: 260px;
   width: 100%;
   justify-content: space-between;
+  align-items: center;
 }
 
 .list-items li a {
@@ -43,4 +44,34 @@ header .list-items {
 header .menu {
   justify-content: space-between;
   align-items: center;
+}
+
+.hero-section {
+  height: 100vh;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.presentation {
+  min-height: 200px;
+}
+
+.presentation h1 {
+  color: #122A57;
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.presentation a {
+  background-color: #122A57;
+  color: #fff;
+  text-align: center;
+  border-radius: 30px;
+  text-decoration: none;
+  width: 220px;
+  height: 50px;
+  display: block;
+  line-height: 50px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
