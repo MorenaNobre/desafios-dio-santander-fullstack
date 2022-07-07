@@ -57,6 +57,29 @@ header .menu {
   justify-content: space-between;
 }
 
+.btn-hero {
+  background-color: #122A57;
+  color: #fff;
+  text-align: center;
+  border-radius: 30px;
+  text-decoration: none;
+  width: 220px;
+  height: 50px;
+  display: block;
+  line-height: 50px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  border: 2px solid #122A57;
+}
+
+.btn-hero:hover {
+  background-color: #fff;
+  color: #122A57;
+  border: 2px solid #122A57;
+  font-weight: 700;
+  transition: 0.2s;
+}
+
 .presentation {
   min-height: 200px;
 }
@@ -67,18 +90,27 @@ header .menu {
   margin-bottom: 10px;
 }
 
-.presentation a {
+.btn {
   background-color: #122A57;
   color: #fff;
   text-align: center;
   border-radius: 30px;
   text-decoration: none;
-  width: 220px;
-  height: 50px;
+  width: 180px;
+  height: 30px;
   display: block;
-  line-height: 50px;
+  line-height: 30px;
   margin-top: 10px;
   margin-bottom: 10px;
+  border: 2px solid #122A57;
+}
+
+.btn:hover {
+  background-color: #fff;
+  color: #122A57;
+  border: 2px solid #122A57;
+  font-weight: 700;
+  transition: 0.2s;
 }
 
 #description {
@@ -86,6 +118,7 @@ header .menu {
   align-items: center;
   justify-content: space-between;
   gap: 42px;
+  margin-bottom: 50px;
 }
 
 #description h2 {
@@ -124,15 +157,23 @@ header .menu {
   padding-bottom: 100px;
 }
 
+.services-title {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px
+}
+
 #services h2 {
   color: #fff;
   font-size: 32px;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 
 .services-list {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .services-list .service-item {
@@ -152,16 +193,95 @@ header .menu {
   font-size: 12px;
   text-decoration: none;
   font-weight: 700;
+  border: 1px solid #fff;
+}
+
+.service-item a:hover {
+  background-color: #122A57;
+  border: 1px solid #fff;
+  color: #fff;
+  font-weight: 700;
+  transition: 0.2s;
 }
 
 .service-item p {
   font-weight: 700;
   font-size: 18px;
   color: #fff;
-  margin-top: 20px;
+  margin-top: 30px;
+  margin-bottom: 10px;
 }
 
 .service-item img {
   width: 80%;
   margin: auto;
+}
+
+#plans {
+  flex-direction: column;
+  min-height:100vh;
+  padding-top: 80px;
+}
+
+#plans h2 {
+  font-size: 32px;
+  color: #122A57;
+}
+
+.plan-list {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.plan-item {
+  flex: 1;
+  border: 3px solid #122A57;
+  margin-right: 20px;
+  padding: 10px;
+  border-radius: 12px;
+  max-width: 240px;
+}
+
+.plan-item .btn {
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+.plan-item h3 {
+  font-size: 24px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.plan-item h3::after {
+  content: "";
+  background-color: #122A57;
+  width: 100%;
+  height: 2px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.plan-item ul {
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.plan-item ul li {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.plan-item ul li::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background-color: #122A57;
+  margin-right: 5px;
 }
