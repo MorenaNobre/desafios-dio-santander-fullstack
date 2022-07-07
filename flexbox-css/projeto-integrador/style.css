@@ -24,6 +24,7 @@ div img {
   max-width: 992px;
   margin: auto;
   width: 100%;
+  min-width: 320px;
 }
 
 header {
@@ -52,9 +53,24 @@ header .menu {
 }
 
 .hero-section {
-  height: 100vh;
+  height: 96vh;
   align-items: center;
   justify-content: space-between;
+}
+
+.hero-section .presentation {
+  min-height: 200px;
+}
+
+.hero-section .presentation .text {
+  min-height: 200px;
+  width: 100%;
+}
+
+.presentation h1 {
+  color: #122A57;
+  font-size: 48px;
+  margin-bottom: 10px;
 }
 
 .btn-hero {
@@ -73,39 +89,6 @@ header .menu {
 }
 
 .btn-hero:hover {
-  background-color: #fff;
-  color: #122A57;
-  border: 2px solid #122A57;
-  font-weight: 700;
-  transition: 0.2s;
-}
-
-.presentation {
-  min-height: 200px;
-}
-
-.presentation h1 {
-  color: #122A57;
-  font-size: 48px;
-  margin-bottom: 10px;
-}
-
-.btn {
-  background-color: #122A57;
-  color: #fff;
-  text-align: center;
-  border-radius: 30px;
-  text-decoration: none;
-  width: 180px;
-  height: 30px;
-  display: block;
-  line-height: 30px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  border: 2px solid #122A57;
-}
-
-.btn:hover {
   background-color: #fff;
   color: #122A57;
   border: 2px solid #122A57;
@@ -219,7 +202,7 @@ header .menu {
 
 #plans {
   flex-direction: column;
-  min-height:100vh;
+  min-height:80vh;
   padding-top: 80px;
 }
 
@@ -241,11 +224,7 @@ header .menu {
   padding: 10px;
   border-radius: 12px;
   max-width: 240px;
-}
-
-.plan-item .btn {
-  margin: auto;
-  margin-bottom: 20px;
+  marrgin-bottom: 20px;
 }
 
 .plan-item h3 {
@@ -284,4 +263,124 @@ header .menu {
   height: 10px;
   background-color: #122A57;
   margin-right: 5px;
+}
+
+.plan-item .btn {
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+.plan-item .btn {
+  background-color: #122A57;
+  color: #fff;
+  text-align: center;
+  border-radius: 30px;
+  text-decoration: none;
+  width: 180px;
+  height: 30px;
+  display: block;
+  line-height: 30px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 2px solid #122A57;
+}
+
+.plan-item .btn:hover {
+  background-color: #fff;
+  color: #122A57;
+  border: 2px solid #122A57;
+  font-weight: 700;
+  transition: 0.2s;
+}
+
+
+footer {
+  background-color: #122A57;
+  height: 70px;
+  display: flex;
+  align-items: center;
+}
+
+footer .footer {
+  justify-content: space-between;
+  color: #fff;
+}
+
+/* responsive */
+
+@media (max-width: 992px) {
+  .flex-container {
+    flex-direction: column;
+  }
+
+  .hero-section {
+    flex-direction: column-reverse;
+  }
+
+  .hero-section .presentation .text {
+    width: 100%;
+  }
+
+  #description {
+    flex-direction: column-reverse;
+    margin-top: 20px;
+  }
+
+  #description img {
+    min-width: 320px;
+    margin: auto;
+  }
+
+  .description-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 100px;
+    margin-left: 100px;
+  }
+
+  .description-text h2 {
+    text-align: flex-start;
+    width: 100%;
+  }
+
+  .services-list {
+    flex-direction: column;
+  }
+
+  .service-item {
+    margin-bottom: 90px;
+  }
+
+  .service-item img {
+    width: 40%;
+    margin: auto;
+  }
+
+  .plan-list {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+
+  .plan-list .plan-item {
+    max-width: 90%;
+    margin: auto;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .responsive {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .footer {
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+    display: flex;
+  }
 }
