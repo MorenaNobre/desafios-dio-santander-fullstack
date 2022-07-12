@@ -1,4 +1,6 @@
 function compareNumbers(num1, num2) {
+	if (!num1 || !num2) return "Please input two numbers"
+
   const firstFrase = createFirstFrase(num1, num2);
   const secondFrase = createSecondFrase(num1, num2);
 
