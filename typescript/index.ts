@@ -102,15 +102,26 @@ type CachorroSomenteLeitura = {
 class MeuCachorro implements CachorroSomenteLeitura {
   idade;
   nome;
-  parqueFavorito;
+  parqueFavorito: any;
 
-  constructor(nome, idade) {
+  constructor(nome: string, idade: number) {
     this.nome = nome;
     this.idade = idade;
   }
 }
 
 const cao = new MeuCachorro("Bidu", 8);
+console.log(cao)
 
 
+//Importando biblioteca
 
+import $ from "jquery";
+
+$.fn.extend({
+  novaFuncao() {
+    console.log("Chamou nova função")
+  }
+})
+
+$("body").novaFuncao();
