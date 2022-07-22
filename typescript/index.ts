@@ -125,3 +125,22 @@ $.fn.extend({
 })
 
 $("body").novaFuncao();
+
+//Omit
+
+interface Pessoa {
+  nome: string;
+  idade: number;
+  nacionalidade: string;
+}
+
+interface Brasileiro extends Omit<Pessoa, "nacionalidade"> {
+
+}
+
+const brasileiro: Brasileiro = {
+  idade: 33,
+  nome: "Fernando"
+}
+
+console.log(brasileiro)
