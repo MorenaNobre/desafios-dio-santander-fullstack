@@ -1,5 +1,5 @@
 "use strict";
-//Como podemos rodar o código abaixo em um arquivo .ts sem causar erros?
+console.log("Sou o desafio 1");
 const tieta = {
     codigo: 42,
     nome: "Tieta do Agreste",

@@ -1,3 +1,4 @@
+console.log("Sou o desafio 1")
 //Como podemos rodar o código abaixo em um arquivo .ts sem causar erros?
 
 /** 
