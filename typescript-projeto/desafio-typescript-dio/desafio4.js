@@ -18,7 +18,8 @@ console.log("Olá desafio 4!");
 // Todas as requisições necessárias para as atividades acima já estão prontas, mas a implementação delas ficou pela metade (não vou dar tudo de graça).
 // Atenção para o listener do botão login-button que devolve o sessionID do usuário
 // É necessário fazer um cadastro no https://www.themoviedb.org/ e seguir a documentação do site para entender como gera uma API key https://developers.themoviedb.org/3/getting-started/introduction
-var apiKey = "3d235d155d6fc50e439c1ec0346560f4";
+// var apiKey = "3d235d155d6fc50e439c1ec0346560f4";
+let apiKey = "3d235d155d6fc50e439c1ec0346560f4";
 // let apiKey;
 let requestToken;
 let username;
@@ -29,8 +30,8 @@ let inputLogin = document.getElementById("login");
 let inputSenha = document.getElementById("senha");
 let inputApiKey = document.getElementById("api-key");
 let loginButton = document.getElementById("login-button");
-let searchButton = document.getElementById("search-button");
 let inputSearch = document.getElementById("search");
+let searchButton = document.getElementById("search-button");
 let searchContainer = document.getElementById("search-container");
 //sem erros
 if (loginButton) {
@@ -41,23 +42,25 @@ if (loginButton) {
     }));
 }
 //sem erros - pesquisa filmes
-searchButton.addEventListener("click", () => __awaiter(void 0, void 0, void 0, function* () {
-    let lista = document.getElementById("lista");
-    if (lista) {
-        lista.outerHTML = "";
-    }
-    let query = inputSearch.value;
-    let listaDeFilmes = yield procurarFilme({ query });
-    let ul = document.createElement("ul");
-    ul.id = "lista";
-    for (const item of listaDeFilmes.results) {
-        let li = document.createElement("li");
-        li.appendChild(document.createTextNode(item.original_title));
-        ul.appendChild(li);
-    }
-    console.log(listaDeFilmes);
-    searchContainer.appendChild(ul);
-}));
+if (searchButton) {
+    searchButton.addEventListener("click", () => __awaiter(void 0, void 0, void 0, function* () {
+        let lista = document.getElementById("lista");
+        if (lista) {
+            lista.outerHTML = "";
+        }
+        let query = inputSearch.value;
+        let listaDeFilmes = yield procurarFilme({ query });
+        let ul = document.createElement("ul");
+        ul.id = "lista";
+        for (const item of listaDeFilmes.results) {
+            let li = document.createElement("li");
+            li.appendChild(document.createTextNode(item.original_title));
+            ul.appendChild(li);
+        }
+        console.log(listaDeFilmes);
+        searchContainer.appendChild(ul);
+    }));
+}
 //sem erros
 function preencherSenha() {
     password = inputSenha.value;
@@ -84,10 +87,11 @@ function validateLoginButton() {
         }
     }
 }
-//sem erros, mas declarado como any. e o typescript inferiu a tipagem em outras partes do código.
+//sem erros, mas declarado como any.
 class HttpClient {
     static get({ url, method, body }) {
         return __awaiter(this, void 0, void 0, function* () {
+            // static async get({ url, method, body} : any): Promise<any> {
             return new Promise((resolve, reject) => {
                 let request = new XMLHttpRequest();
                 request.open(method, url, true);

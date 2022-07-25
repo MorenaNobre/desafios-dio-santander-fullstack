@@ -11,9 +11,10 @@ console.log("Olá desafio 4!");
 // Atenção para o listener do botão login-button que devolve o sessionID do usuário
 // É necessário fazer um cadastro no https://www.themoviedb.org/ e seguir a documentação do site para entender como gera uma API key https://developers.themoviedb.org/3/getting-started/introduction
 
-var apiKey = "3d235d155d6fc50e439c1ec0346560f4";
+// var apiKey = "3d235d155d6fc50e439c1ec0346560f4";
+let apiKey = "3d235d155d6fc50e439c1ec0346560f4";
 // let apiKey;
-let requestToken: number;
+let requestToken: string;
 let username: string;
 let password: string;
 let sessionId: number;
@@ -23,8 +24,8 @@ let inputLogin = document.getElementById("login") as HTMLInputElement;
 let inputSenha = document.getElementById("senha") as HTMLInputElement;
 let inputApiKey = document.getElementById("api-key") as HTMLInputElement;
 let loginButton = document.getElementById("login-button") as HTMLButtonElement;
-let searchButton = document.getElementById("search-button")!;
 let inputSearch = document.getElementById("search") as HTMLInputElement;
+let searchButton = document.getElementById("search-button") as HTMLButtonElement;
 let searchContainer = document.getElementById("search-container") as HTMLInputElement;
 
 //sem erros
@@ -37,41 +38,43 @@ if (loginButton) {
 }
 
 //sem erros - pesquisa filmes
-searchButton.addEventListener("click", async () => {
-  let lista = document.getElementById("lista");
-  if (lista) {
-    lista.outerHTML = "";
-  }
-
-  let query = inputSearch.value;
-  let listaDeFilmes = await procurarFilme({ query });
-  let ul = document.createElement("ul");
-  ul.id = "lista";
+if (searchButton) {
+  searchButton.addEventListener("click", async () => {
+    let lista = document.getElementById("lista");
+    if (lista) {
+      lista.outerHTML = "";
+    }
   
-  for (const item of listaDeFilmes.results) {
-    let li = document.createElement("li");
-    li.appendChild(document.createTextNode(item.original_title));
-    ul.appendChild(li);
-  }
-
-  console.log(listaDeFilmes);
-  searchContainer.appendChild(ul);
-});
+    let query = inputSearch.value;
+    let listaDeFilmes = await procurarFilme({ query });
+    let ul = document.createElement("ul");
+    ul.id = "lista";
+    
+    for (const item of listaDeFilmes.results) {
+      let li = document.createElement("li");
+      li.appendChild(document.createTextNode(item.original_title));
+      ul.appendChild(li);
+    }
+  
+    console.log(listaDeFilmes);
+    searchContainer.appendChild(ul);
+  });
+}
 
 //sem erros
-function preencherSenha(): void {
+function preencherSenha() {
   password = inputSenha.value;
   validateLoginButton();
 }
 
 //sem erros
-function preencherLogin(): void {
+function preencherLogin() {
   username = inputLogin.value;
   validateLoginButton();
 }
 
 //sem erros
-function preencherApi(): void {
+function preencherApi() {
   apiKey = inputApiKey.value;
   validateLoginButton();
 }
@@ -87,9 +90,10 @@ function validateLoginButton(): void {
   }
 }
 
-//sem erros, mas declarado como any. e o typescript inferiu a tipagem em outras partes do código.
+//sem erros, mas declarado como any.
 class HttpClient {
-  static async get({ url, method, body }: any): Promise<any> {
+  static async get({ url, method, body }: any): Promise<any>{
+  // static async get({ url, method, body} : any): Promise<any> {
     return new Promise((resolve, reject) => {
       let request = new XMLHttpRequest();
       request.open(method, url, true);
@@ -124,7 +128,7 @@ class HttpClient {
 }
 
 //sem erros
-async function procurarFilme({ query }: { query: string; }): Promise<any> {
+async function procurarFilme({ query }: { query: string; }) {
   query = encodeURI(query);
   console.log(query);
   let result = await HttpClient.get({
@@ -175,7 +179,7 @@ async function criarSessao(): Promise<void> {
 }
 
 //sem erros
-async function criarLista({ nomeDaLista, descricao }: { nomeDaLista: string; descricao: string; }): Promise<void> {
+async function criarLista({ nomeDaLista, descricao }: { nomeDaLista: string; descricao: string; }) {
   let result = await HttpClient.get({
     url: `https://api.themoviedb.org/3/list?api_key=${apiKey}&session_id=${sessionId}`,
     method: "POST",
