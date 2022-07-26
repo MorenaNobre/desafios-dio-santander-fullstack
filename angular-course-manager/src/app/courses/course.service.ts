@@ -15,6 +15,10 @@ export class CourseService {
     return this.httpClient.get<Course[]>(this.courseUrl);
   }
 
+  deleteById(id: number): Observable<any> {
+    return this.httpClient.delete<any>(`${this.courseUrl}/${id}`);
+  }
+
   retriveById(id: number): Observable<Course> {
     return this.httpClient.get<Course>(`${this.courseUrl}/${id}`);
   }
