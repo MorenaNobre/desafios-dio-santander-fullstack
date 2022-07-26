@@ -18,6 +18,7 @@
       <th>Duração</th>
       <th>Avaliação</th>
       <th>Descrição</th>
+      <th>Opções</th>
     </tr>
   </thead>
   <tbody>
@@ -32,7 +33,9 @@
         <app-star [rating]="course.rating"></app-star>
       </td>
       <td>{{course.description}}</td>
-      <td></td>
+      <td>
+        <a [routerLink]="['/courses/info', course.id]" class="btn btn-primary">Editar</a>
+      </td>
     </tr>
   </tbody>
 </div>
