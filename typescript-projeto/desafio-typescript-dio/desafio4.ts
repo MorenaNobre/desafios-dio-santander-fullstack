@@ -129,10 +129,10 @@ class HttpClient {
 
 //sem erros
 async function procurarFilme({ query }: { query: string; }) {
-  query = encodeURI(query);
+  const query1 = encodeURI("query");
   console.log(query);
   let result = await HttpClient.get({
-    url: `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${query}`,
+    url: `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${query1}`,
     method: "GET",
   });
   return result;
