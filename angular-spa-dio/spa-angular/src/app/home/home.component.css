@@ -1,0 +1,9 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.example-icon {
+  background: transparent;
+  border: none;
+  color: #fff;
+}
