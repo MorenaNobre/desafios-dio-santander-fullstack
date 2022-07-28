@@ -14,4 +14,8 @@
 </div>
 
 <!-- Structures directives -->
-<h2 class="text-center text-success py-3" *ngIf="count > 7">O contador passou de 7</h2>
+<h2 class="text-center text-success py-3" *ngIf="count > 7; else menor">O contador passou de 7</h2>
+
+<ng-template #menor>
+  <h2 class="text-center text-secondary py-3">Aqui o contador é menor que 7!</h2>
+</ng-template>
