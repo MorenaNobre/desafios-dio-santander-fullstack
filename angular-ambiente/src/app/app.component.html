@@ -19,3 +19,30 @@
 <ng-template #menor>
   <h2 class="text-center text-secondary py-3">Aqui o contador é menor que 7!</h2>
 </ng-template>
+
+<ul [ngSwitch]="count" class="list-group mx-auto col-3 py-3">
+  <li 
+    class="list-group-item text-center"
+    *ngSwitchCase="3"
+  >
+    É igual a 3.
+  </li>
+  <li 
+    class="list-group-item text-center"
+    *ngSwitchCase="5"
+  >
+    É igual a 5.
+  </li>
+  <li 
+    class="list-group-item text-center"
+    *ngSwitchCase="7"
+  >
+    É igual a 7.
+  </li>
+  <li 
+    class="list-group-item text-center"
+    *ngSwitchDefault
+  >
+    Esse é o default.
+  </li>
+</ul>
