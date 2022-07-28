@@ -1,3 +1,5 @@
-<h1 class="text-success text-center">Hey Angular</h1>
+<h1 class="text-red text-center py-3">Hey Angular</h1>
 
-<h2 class="text-center">Contador: 1</h2>
+<div [ngStyle]="{ background: count < 5 ? '#263238' : '#263238' }" class="py-3">
+  <h2 [ngStyle]="{ color: count < 5 ? '#FFEB3B' : '#00E676' }" class="text-center">Contador: {{ count }}</h2>
+</div>
