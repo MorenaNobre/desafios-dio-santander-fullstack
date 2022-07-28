@@ -1,82 +1,84 @@
-<h1 class="text-info bg-dark text-center py-3">Hey Angular</h1>
+<div class="bg-dark">
+  <h1 class="text-info bg-dark text-center py-3">Hey Angular</h1>
 
-<!-- Atribute directives -->
-<div
-  class="py-3"
-  [ngStyle]="{
-    background: count < 5 ? '#263238' : '#263238',
-    color: count < 5 ? '#FFEB3B' : '#00E676'
-  }"
->
-  <h2 [ngClass]="{ custom: count > 5 }" class="text-center">
-    Contador: {{ count }}
-  </h2>
-</div>
-
-<!-- Structures directives -->
-<h2 class="text-center text-success py-3" *ngIf="count > 7; else menor">
-  O contador passou de 7
-</h2>
-
-<ng-template #menor>
-  <h2 class="text-center text-secondary py-3">
-    Aqui o contador é menor que 7!
-  </h2>
-</ng-template>
-
-<ul [ngSwitch]="count" class="list-group mx-auto col-3 py-3">
-  <li class="list-group-item text-center" *ngSwitchCase="3">É igual a 3.</li>
-  <li class="list-group-item text-center" *ngSwitchCase="5">É igual a 5.</li>
-  <li class="list-group-item text-center" *ngSwitchCase="7">É igual a 7.</li>
-  <li class="list-group-item text-center" *ngSwitchDefault>
-    Esse é o default.
-  </li>
-</ul>
-
-<ul class="list-group mx-auto col-3 py-3 my-3">
-  <li class="list-group-item text-center" *ngFor="let pessoa of pessoas">
-    O nome da pessoa é {{ pessoa.nome }} {{ pessoa.sobrenome }}
-  </li>
-</ul>
-
-<h2 class="text-center mb-3">*ngFor with bootstrap cards</h2>
-
-<div class="row">
+  <!-- Atribute directives -->
   <div
-    class="card mx-auto p-3 mb-3"
-    *ngFor="let pessoa of pessoas"
-    style="width: 18rem"
+    class="py-3"
+    [ngStyle]="{
+      background: count < 5 ? '#263238' : '#263238',
+      color: count < 5 ? '#FFEB3B' : '#00E676'
+    }"
   >
-    <div class="card-body">
-      <h5 class="card-title">{{ pessoa.nome }} {{ pessoa.sobrenome }}</h5>
-      <h6 class="card-subtitle mb-2 text-muted">{{ pessoa.profissao }}</h6>
-      <p class="card-text">
-        {{ pessoa.descricao }}
-      </p>
-      <a href="#" class="card-link">{{ pessoa.email }}</a>
+    <h2 [ngClass]="{ custom: count > 5 }" class="text-center">
+      Contador: {{ count }}
+    </h2>
+  </div>
+
+  <!-- Structures directives -->
+  <h2 class="text-center text-success py-3" *ngIf="count > 7; else menor">
+    O contador passou de 7
+  </h2>
+
+  <ng-template #menor>
+    <h2 class="text-center text-secondary py-3">
+      Aqui o contador é menor que 7!
+    </h2>
+  </ng-template>
+
+  <ul [ngSwitch]="count" class="list-group mx-auto col-3 py-3">
+    <li class="list-group-item text-center" *ngSwitchCase="3">É igual a 3.</li>
+    <li class="list-group-item text-center" *ngSwitchCase="5">É igual a 5.</li>
+    <li class="list-group-item text-center" *ngSwitchCase="7">É igual a 7.</li>
+    <li class="list-group-item text-center" *ngSwitchDefault>
+      Esse é o default.
+    </li>
+  </ul>
+
+  <ul class="list-group mx-auto col-3 py-3 my-3">
+    <li class="list-group-item text-center" *ngFor="let pessoa of pessoas">
+      O nome da pessoa é {{ pessoa.nome }} {{ pessoa.sobrenome }}
+    </li>
+  </ul>
+
+  <h2 class="text-center mb-3 text-info">*ngFor with bootstrap cards</h2>
+
+  <div class="row">
+    <div
+      class="card mx-auto p-3 mb-3"
+      *ngFor="let pessoa of pessoas"
+      style="width: 18rem"
+    >
+      <div class="card-body">
+        <h5 class="card-title">{{ pessoa.nome }} {{ pessoa.sobrenome }}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{ pessoa.profissao }}</h6>
+        <p class="card-text">
+          {{ pessoa.descricao }}
+        </p>
+        <a href="#" class="card-link">{{ pessoa.email }}</a>
+      </div>
     </div>
   </div>
-</div>
 
-<!-- One way data binding -->
-<div class="container text-center mb-3 mx-auto">
-  <h2 class="mb-3">{{ nome }}</h2>
-  <button
-    type="button"
-    class="btn btn-secondary btn-lg px-3"
-    (click)="clicou('Morena')"
-  >
-    Clique
-  </button>
-</div>
+  <!-- One way data binding -->
+  <div class="container text-center mb-3 mx-auto">
+    <h2 class="mb-3" appMarcaTexto corDeFundo="black" corDoTexto="gray">{{ nome }}</h2>
+    <button
+      type="button"
+      class="btn btn-secondary btn-lg px-3"
+      (click)="clicou('Morena')"
+    >
+      Clique
+    </button>
+  </div>
 
-<!-- Two way data binding -->
-<div class="col-4 mx-auto mb-3">
-  <input
-    type="text"
-    class="form-control mb-3"
-    placeholder="Digite aqui..."
-    [(ngModel)]="text"
-  />
-  <h4>Saída: {{ text }}</h4>
+  <!-- Two way data binding -->
+  <div class="col-4 mx-auto mb-3">
+    <input
+      type="text"
+      class="form-control mb-3"
+      placeholder="Digite aqui..."
+      [(ngModel)]="text"
+    />
+    <h4>Saída: {{ text }}</h4>
+  </div>
 </div>
