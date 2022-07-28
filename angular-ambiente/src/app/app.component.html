@@ -58,7 +58,25 @@
   </div>
 </div>
 
+<!-- One way data binding -->
 <div class="container text-center mb-3 mx-auto">
   <h2 class="mb-3">{{ nome }}</h2>
-  <button type="button" class="btn btn-secondary btn-lg px-3" (click)="clicou('Morena')">Clique</button>
+  <button
+    type="button"
+    class="btn btn-secondary btn-lg px-3"
+    (click)="clicou('Morena')"
+  >
+    Clique
+  </button>
+</div>
+
+<!-- Two way data binding -->
+<div class="col-4 mx-auto mb-3">
+  <input
+    type="text"
+    class="form-control mb-3"
+    placeholder="Digite aqui..."
+    [(ngModel)]="text"
+  />
+  <h4>Saída: {{ text }}</h4>
 </div>
