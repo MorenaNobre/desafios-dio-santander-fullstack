@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
   count = 0;
+  nome = 'Morena Nobre'
 
   pessoas = [
     {
@@ -50,7 +51,8 @@ export class AppComponent implements OnInit {
       }
     }, 1000);
   }
-}
-function newFunction() {
-  return 'url(https://avatars.githubusercontent.com/u/29803756?v=4)';
+
+  clicou(nome: string): void {
+    console.log("Clicou", nome);
+  }
 }

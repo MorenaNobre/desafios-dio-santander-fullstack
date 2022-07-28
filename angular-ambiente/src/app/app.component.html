@@ -43,7 +43,7 @@
 
 <div class="row">
   <div
-    class="card mx-auto p-3  mb-3"
+    class="card mx-auto p-3 mb-3"
     *ngFor="let pessoa of pessoas"
     style="width: 18rem"
   >
@@ -51,9 +51,14 @@
       <h5 class="card-title">{{ pessoa.nome }} {{ pessoa.sobrenome }}</h5>
       <h6 class="card-subtitle mb-2 text-muted">{{ pessoa.profissao }}</h6>
       <p class="card-text">
-        {{pessoa.descricao}}
+        {{ pessoa.descricao }}
       </p>
-      <a href="#" class="card-link">{{pessoa.email}}</a>
+      <a href="#" class="card-link">{{ pessoa.email }}</a>
     </div>
   </div>
+</div>
+
+<div class="container text-center mb-3 mx-auto">
+  <h2 class="mb-3">{{ nome }}</h2>
+  <button type="button" class="btn btn-secondary btn-lg px-3" (click)="clicou('Morena')">Clique</button>
 </div>
