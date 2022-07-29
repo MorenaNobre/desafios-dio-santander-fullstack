@@ -36,12 +36,13 @@
 
   <ul class="list-group mx-auto col-3 py-3 my-3">
     <li class="list-group-item text-center" *ngFor="let pessoa of pessoas">
-      O nome da pessoa é {{ pessoa.nome }} {{ pessoa.sobrenome }}
+      O nome da pessoa é {{ pessoa.firstName }} {{ pessoa.lastName }} e ela tem {{pessoa.age}} anos.
     </li>
   </ul>
 
   <h2 class="text-center mb-3 text-info">*ngFor with bootstrap cards</h2>
 
+  <!-- ngFor Cards dados vindos do services - people services injectable-->
   <div class="row">
     <div
       class="card mx-auto p-3 mb-3"
@@ -49,12 +50,13 @@
       style="width: 18rem"
     >
       <div class="card-body">
-        <h5 class="card-title">{{ pessoa.nome }} {{ pessoa.sobrenome }}</h5>
-        <h6 class="card-subtitle mb-2 text-muted">{{ pessoa.profissao }}</h6>
+        <h5 class="card-title">{{pessoa.firstName}} {{pessoa.lastName}}</h5>
+        <h6 class="card-subtitle mb-2 text-info">{{pessoa.age}} anos</h6>
+        <h6 class="card-subtitle mb-2 text-muted">{{pessoa.occupation}}</h6>
         <p class="card-text">
-          {{ pessoa.descricao }}
+          {{pessoa.description}}
         </p>
-        <a href="#" class="card-link">{{ pessoa.email }}</a>
+        <a href="#" class="card-link">{{pessoa.email}}</a>
       </div>
     </div>
   </div>
@@ -79,6 +81,6 @@
       placeholder="Digite aqui..."
       [(ngModel)]="text"
     />
-    <h4>Saída: {{ text }}</h4>
+    <h4 class="text-info mb-3">Saída: {{ text }}</h4>
   </div>
 </div>

@@ -1,4 +1,4 @@
-import { MarcaTextoDirective } from './marca-texto.directive';
+import { MarcaTextoDirective } from "./marca-texto.directive";
 
 describe('MarcaTextoDirective', () => {
   it('should create an instance', () => {

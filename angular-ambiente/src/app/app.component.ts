@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PeopleService } from './shared/services/people.service';
 
 @Component({
   selector: 'app-root',
@@ -12,39 +13,20 @@ export class AppComponent implements OnInit {
 
   pessoas = [
     {
-      nome: 'Morena',
-      sobrenome: 'Nobre',
-      profissao: 'Desenvolvedora Frontend',
-      descricao: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam quod unde, similique debitis voluptatem mollitia.',
-      email: 'morena@dev.com'
-    },
-    {
-      nome: 'Raira',
-      sobrenome: 'Pagano',
-      profissao: 'Coordenadora P&D Saúde Alimentar',
-      descricao: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam quod unde, similique debitis voluptatem mollitia.',
-      email: 'raira@nutri.com'
-    },
-    {
-      nome: 'Peterson',
-      sobrenome: 'Ramos',
-      profissao: 'Diretor Escola do Estado de São Paulo',
-      descricao: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam quod unde, similique debitis voluptatem mollitia.',
-      email: 'peterson@diretor.com'
-    },
-    {
-      nome: 'Gabriel',
-      sobrenome: 'Smaira',
-      profissao: 'Orientador de Educação Motora',
-      descricao: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam quod unde, similique debitis voluptatem mollitia.',
-      email: 'gabs@terapeuta.com'
+      firstName: '',
+      lastName: '',
+      age: 0,
+      occupation: '',
+      description:
+        '',
+      email: '',
     },
   ];
 
-  constructor() {}
+  constructor(private peopleService: PeopleService) {}
 
   ngOnInit() {
-    console.log(this.pessoas);
+    this.getPeople()
     let interval = setInterval(() => {
       this.count++;
       if (this.count === 10) {
@@ -55,5 +37,11 @@ export class AppComponent implements OnInit {
 
   clicou(nome: string): void {
     console.log("Clicou", nome);
+  }
+
+  getPeople() {
+    this.peopleService.getPeople().subscribe(people => {
+      this.pessoas = people;
+    })
   }
 }
