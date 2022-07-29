@@ -1,1 +1,17 @@
-<p>list works!</p>
+<div class="row">
+  <div
+    class="card mx-auto p-3 mb-3"
+    *ngFor="let pessoa of pessoas"
+    style="width: 18rem"
+  >
+    <div class="card-body">
+      <h5 class="card-title">{{pessoa.firstName}} {{pessoa.lastName}}</h5>
+      <h6 class="card-subtitle mb-2 text-info">{{pessoa.age}} anos</h6>
+      <h6 class="card-subtitle mb-2 text-muted">{{pessoa.occupation}}</h6>
+      <p class="card-text">
+        {{pessoa.description}}
+      </p>
+      <a href="#" class="card-link">{{pessoa.email}}</a>
+    </div>
+  </div>
+</div>

@@ -43,7 +43,7 @@
   <h2 class="text-center mb-3 text-info">*ngFor with bootstrap cards</h2>
 
   <!-- ngFor Cards dados vindos do services - people services injectable-->
-  <div class="row">
+  <!-- <div class="row">
     <div
       class="card mx-auto p-3 mb-3"
       *ngFor="let pessoa of pessoas"
@@ -59,7 +59,10 @@
         <a href="#" class="card-link">{{pessoa.email}}</a>
       </div>
     </div>
-  </div>
+  </div> -->
+
+  <!-- Sao as mesmas cartas comentadas de cima, porem está vindo de um componente dentro do shared - components - list -->
+  <app-list></app-list>
 
   <!-- One way data binding -->
   <div class="container text-center mb-3 mx-auto">
