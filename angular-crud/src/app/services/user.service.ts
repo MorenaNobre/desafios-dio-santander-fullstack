@@ -27,4 +27,9 @@ export class UserService {
   postUser(user: User): Observable<User> {
     return this.httpClient.post<User>(this.apiUrl, user, this.httpOptions);
   }
+
+  //Exclui usuario do banco DELETE
+  deleteUser(id: number): Observable<User> {
+    return this.httpClient.delete<User>(`${this.apiUrl}/id/${id}`);
+  }
 }
