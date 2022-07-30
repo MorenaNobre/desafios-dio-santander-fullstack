@@ -1,0 +1,9 @@
+<h1 [class.text-red]="textRed">{{retornaNome()}}</h1>
+
+<img [src]="imageUrl" [alt]="imageDesc">
+
+<button [attr.aria-label]="buttonText" (click)="clicou(textRed)">{{buttonText}}</button>
+
+<input #input (keyup)="clicou(input.value)">
+
+{{input.value}}
