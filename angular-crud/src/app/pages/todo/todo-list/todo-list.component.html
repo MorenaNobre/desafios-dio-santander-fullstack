@@ -16,8 +16,7 @@
       </mat-form-field>
       <mat-list role="list">
         <div *ngFor="let todo of todos;">
-          <p>{{todo.title}}</p>
-          <app-todo-item [todo]="todo"></app-todo-item>
+          <app-todo-item [todo]="todo" (remove)="removeTodo($event)"></app-todo-item>
         </div>
       </mat-list>
     </mat-card-content>
