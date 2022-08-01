@@ -1,12 +1,22 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'printList'
+  name: 'printList',
+  pure: false,
 })
 export class PrintListPipe implements PipeTransform {
 
-  transform(value: unknown, ...args: unknown[]): unknown {
-    return null;
+  transform(value: String[], ...args: unknown[]): unknown {
+    let returnStr = '';
+    if(value.length) {
+      value.forEach(val => {
+        returnStr = returnStr + ' ' + val;
+      })
+    }
+
+    // ['mogs', 'pet', 'ra', 'gabs']
+
+    return returnStr;
   }
 
 }
