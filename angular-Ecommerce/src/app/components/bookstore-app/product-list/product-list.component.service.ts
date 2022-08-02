@@ -1,18 +1,24 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Book } from './model/Book';
+import { Observable } from 'rxjs';
 
-@Injectable()
+export type ApiResponse = {
+  books: [];
+}
+
+@Injectable({
+  providedIn: 'root'
+})
 export class BookService {
-  private url = 'https://api.itbook.store/1.0/new';
+  apiUrl = 'https://api.itbook.store/1.0/new';
 
-  httpOptions = {
-    Headers: new Headers({ 'Content-Type': 'application/json' }),
-  };
+  // httpOptions = {
+  //   Headers: new Headers({ 'Content-Type': 'application/json' }),
+  // };
 
-  constructor(private http: HttpClient) {}
+  constructor(private httpClient: HttpClient) {}
 
-  getBook() {
-    return this.http.get(this.url);
+  getBook(): Observable<any> {
+    return this.httpClient.get<any>(this.apiUrl);
   }
 }
